@@ -42,4 +42,17 @@ public class ToyStore {
         }
     }
 
+    public static void main(String[] args) {
+        Toy toy1 = new Toy("1", "Конструктор", 2);
+        Toy toy2 = new Toy("2", "Робот", 2);
+        Toy toy3 = new Toy("3", "Кукла", 6);
+
+        ToyStore toyStore = new ToyStore();
+
+        toyStore.addToy(toy1);
+        toyStore.addToy(toy2);
+        toyStore.addToy(toy3);
+
+        toyStore.runGame(10);
+    }
 }
