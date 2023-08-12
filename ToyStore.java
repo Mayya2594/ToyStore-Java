@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.PriorityQueue;
 
 public class ToyStore {
@@ -25,6 +27,19 @@ public class ToyStore {
             }
         }
         return "";
+    }
+
+    public void runGame(int numRounds) {
+        try{
+            FileWriter writer = new FileWriter("result.txt");
+            for (int i = 0; i < numRounds; i++) {
+                String result = getRandomToy();
+                writer.write(result + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
